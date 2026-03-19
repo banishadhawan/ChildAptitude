@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KidGenius - Fun Aptitude Tests for Children</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header>
+        <!-- Header content from header.php -->
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="KidGenius Logo"></a>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#categories">Age Groups</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#auth-modal" id="login-link">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="hero" id="home">
+            <div class="hero-text">
+                <h2>Fun Aptitude Tests for Young Minds!</h2>
+                <p>Help your child discover their unique skills and talents with our colorful, engaging, and scientifically-designed aptitude tests. Perfect for children ages 3-12!</p>
+                <button class="start-btn" id="explore-btn">Start Exploring</button>
+            </div>
+            <div class="hero-image">
+                <img src="images/wat" alt="Children Learning">
+            </div>
+        </section>
+
+        <section class="age-categories" id="categories">
+            <h2>Choose Your Age Group</h2>
+            <div class="categories">
+                <div class="category-card" data-age="3-5">
+                    <img src="images/begin.webp" alt="Ages 3-5">
+                    <h3>Ages 3-5</h3>
+                    <p>Engaging activities for early learners.</p>
+                    <button class="start-btn" onclick="startTest(1)">Start Test</button>
+                </div>
+                <div class="category-card" data-age="6-8">
+                    <img src="images/category-2.jpg" alt="Ages 6-8">
+                    <h3>Ages 6-8</h3>
+                    <p>Fun challenges for growing minds.</p>
+                    <button class="start-btn" onclick="startTest(2)">Start Test</button>
+                </div>
+                <div class="category-card" data-age="9-12">
+                    <img src="images/category-3.jpg" alt="Ages 9-12">
+                    <h3>Ages 9-12</h3>
+                    <p>Advanced tests for young thinkers.</p>
+                    <button class="start-btn" onclick="startTest(3)">Start Test</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="test-container" id="test-interface">
+        </section>
+
+        <section class="results-container" id="results-page">
+        </section>
+
+        <section class="features">
+            <h2>Why Choose KidGenius?</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <img src="images/scientific.jpg" alt="Scientific Approach">
+                    <h3>Scientific Approach</h3>
+                    <p>Our tests are designed by child psychologists and education experts to accurately measure various aptitudes.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="images/age-appropriate.jpg" alt="Age-Appropriate">
+                    <h3>Age-Appropriate Design</h3>
+                    <p>Each test is carefully tailored to be engaging and appropriate for different developmental stages.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="images/reports.jpg" alt="Detailed Reports">
+                    <h3>Detailed Reports</h3>
+                    <p>Receive comprehensive insights about your child's strengths, talents, and areas for growth.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="images/fun.jpg" alt="Fun Learning">
+                    <h3>Fun Learning Experience</h3>
+                    <p>Children enjoy our interactive and colorful tests that feel more like games than assessments.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="images/tracking.jpg" alt="Progress Tracking">
+                    <h3>Progress Tracking</h3>
+                    <p>Monitor development over time with our easy-to-understand progress charts and comparisons.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="images/guidance.jpg" alt="Expert Guidance">
+                    <h3>Expert Guidance</h3>
+                    <p>Get personalized recommendations for activities that can help develop your child's unique talents.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="chatbot">
+        <!-- Static chatbot content -->
+    </div>
+
+    <div class="modal" id="auth-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Welcome to KidGenius</h2>
+                <button class="close-modal" id="close-modal">×</button>
+            </div>
+            <div id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" placeholder="Enter your password">
+                </div>
+                <button class="submit-btn" id="login-submit">Login</button>
+                <div class="switch-form">
+                    <p>Don't have an account? <a id="show-register">Register here</a></p>
+                </div>
+            </div>
+
+            <div id="register-form" style="display: none;">
+                <div class="form-group">
+                    <label for="register-name">Full Name</label>
+                    <input type="text" id="register-name" placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="register-email">Email</label>
+                    <input type="email" id="register-email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Password</label>
+                    <input type="password" id="register-password" placeholder="Create a password">
+                </div>
+                <div class="form-group">
+                    <label for="child-name">Child's Name</label>
+                    <input type="text" id="child-name" placeholder="Enter your child's name">
+                </div>
+                <div class="form-group">
+                    <label for="child-age">Child's Age</label>
+                    <input type="number" id="child-age" min="3" max="12" placeholder="Enter your child's age">
+                </div>
+                <button class="submit-btn" id="register-submit">Register</button>
+                <div class="switch-form">
+                    <p>Already have an account? <a id="show-login">Login here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>About KidGenius</h3>
+                    <p>We're dedicated to helping children discover their unique talents and abilities through fun, engaging, and scientifically-designed aptitude tests. Our mission is to empower every child to reach their full potential.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#categories">Tests</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#partners">For Educators</a></li>
+                        <li><a href="#support">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <?php echo date("Y"); ?> KidGenius. All rights reserved. Designed with ❤️ for children everywhere.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script src="js/test.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+</html>
